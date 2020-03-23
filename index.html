@@ -1,7 +1,21 @@
-<form action="main.html" method="get">
-<label>
-Введите имя:<br>
-<input placeholder="Имя пользователя”><Ьг>
-</label>
-<input type="submit" value="Ввод">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tetris</title>
+    <style>
+        form {
+            margin-top: 20px;
+            margin-left: 20px;
+            text-align: center
+        }
+    </style>
+</head>
+<body>
+    <form action="main.html" method="get">
+      <label for="username">Enter username for play:</label><br>
+      <input type="text" id="username" name="username" style="height: 20px; width: 170px"><br>
+      <input type="button" value="Play" onclick="submit()" style="margin-top: 10px; height: 30px; width: 70px">
+    </form>
+</body>
+</html>
