@@ -346,6 +346,18 @@
                     level++;
                 }
             }
+
+            this.getLevel = function () {
+                return level;
+            }
+
+            this.getLines = function () {
+                return lines;
+            }
+
+            this.getScore = function () {
+                return score;
+            }
         }
 
         function draw() {
@@ -410,7 +422,7 @@
 
             g.fillStyle = textColor;
             g.font = smallFont;
-            g.fillText('Username:   ' + username, scoreX, scoreY);
+            g.fillText('Username:  ' + username, scoreX, scoreY);
 
             // the borders of grid and preview panel
             g.lineWidth = largeStroke;
@@ -418,11 +430,17 @@
             drawRect(previewRect, gridBorderColor);
             drawRect(outerRect, gridBorderColor);
 
-            g.fillText('controls:  ', scoreX, scoreY + 300);
-            g.fillText('w or up arrow - rotate', scoreX, scoreY + 330);
-            g.fillText('s or down arrow - drop', scoreX, scoreY + 360);
-            g.fillText('a or left arrow - left', scoreX, scoreY + 390);
-            g.fillText('d or right arrow - right', scoreX, scoreY + 420);
+            // scoreboard
+            g.fillText('highscore:  ' + scoreboard.getTopscore(), scoreX, scoreY + 270);
+            g.fillText('level:      ' + scoreboard.getLevel(), scoreX, scoreY + 300);
+            g.fillText('lines:      ' + scoreboard.getLines(), scoreX, scoreY + 330);
+            g.fillText('score:      ' + scoreboard.getScore(), scoreX, scoreY + 360);
+
+            // controls
+            g.fillText('w or up arrow: rotate', scoreX, scoreY + 400);
+            g.fillText('s or down arrow: drop', scoreX, scoreY + 430);
+            g.fillText('a or left arrow: left', scoreX, scoreY + 460);
+            g.fillText('d or right arrow: right', scoreX, scoreY + 490);
 
             // preview
             var minX = 5, minY = 5, maxX = 0, maxY = 0;
